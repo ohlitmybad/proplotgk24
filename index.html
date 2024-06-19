@@ -657,6 +657,10 @@ xhr.open('GET', 'https://datamb.football/data/plot/gk.csv', false); // false for
 xhr.send(null);
 
 let csvData = xhr.responseText;
+let extraHeaderRow = 'ID,Player,Top 7 Leagues,Minutes played,Successful defensive actions per 90,Defensive duels per 90,Defensive duels won %,Aerial duels per 90,Aerial duels won %,Interceptions per 90,PAdj Interceptions,Yellow cards per 90,Red cards per 90,Received passes per 90,Fouls suffered per 90,Passes per 90,Accurate passes %,Forward passes per 90,Accurate forward passes %,Lateral passes per 90,Accurate lateral passes %,Short / medium passes per 90,Accurate short / medium passes %,Long passes per 90,Accurate long passes %,Average pass length m,Average long pass length m,Passes to final third per 90,Accurate passes to final third %,Progressive passes per 90,Accurate progressive passes %,Conceded goals per 90,Shots against per 90,Clean sheets,Save rate %,xG against per 90,Prevented goals per 90,Exits per 90,Age';
+
+// Concatenate the extra header row with the fetched CSV data
+csvData = extraHeaderRow + csvData;	
 
 // Replace all '\n' characters with actual new rows in the CSV
 csvData = csvData.split('\\n').join('\n');
