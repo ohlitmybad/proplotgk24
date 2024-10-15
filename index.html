@@ -174,33 +174,6 @@ body.dark-mode .dark-mode-toggle .toggle-icon::before {
   }
 
 
-.button-screenshot {
-  position: absolute;
-  top: 60px;
-  left: 93%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 37.1px;
-  height: 37.1px;
-  border-radius: 50%;
-  background-color: #e0e0de;
-  color: #333;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-.button-screenshot:hover {
-  box-shadow: rgba(0, 0, 0, 0.4) 3px 3px 3px;
-}
-
-.icon-screenshot::before {
-  content: "\f118"; /* Replace with the correct icon */
-  font-family: "Ionicons";
-  font-size: 22px;
-}
-
 
 
 
@@ -234,15 +207,33 @@ font-size: 22px;
 font-size: 22px;
 }
 
-.select-all-button {
+.button-screenshot, .select-all-button {
     margin: 10px;
     cursor: pointer;
-  background-color: #fff;
+    background-color: #fff;
+    border-radius: 25px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 1px 0px 0px, rgba(0, 0, 0, .14) 0 0px 0px 0, rgba(0, 0, 0, .12) 0 0px 3px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 24px;
+    letter-spacing: .25px;
+    padding: 2px 24px;
+    width: 120px; /* Fixed width */
+    text-align: center;
+}
+
+
+body.dark-mode .button-screenshot {
+    margin: 10px;
+    cursor: pointer;
   border-radius: 25px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, .2) 0 1px 0px 0px,rgba(0, 0, 0, .14) 0 0px 0px 0,rgba(0, 0, 0, .12) 0 0px 3px 0;
+  box-shadow: rgba(255, 253, 253, 0.5) 0 1px 0px 0px,rgba(255, 250, 250, 0.18) 0 0px 0px 0,rgba(255, 251, 251, 0.18) 0 0px 3px 0;
   box-sizing: border-box;
-  color: #3c4043;
   font-family: "Google Sans",Roboto,Arial,sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -250,6 +241,7 @@ font-size: 22px;
   letter-spacing: .25px;
   padding: 2px 24px;
 }
+
 
 
 body.dark-mode .select-all-button {
@@ -266,7 +258,6 @@ body.dark-mode .select-all-button {
   letter-spacing: .25px;
   padding: 2px 24px;
 }
-
 
 
 circle.highlighted {
@@ -729,7 +720,7 @@ width: 72px;
     <option value="30">U30</option>
     <option value="35">U35</option>    
  </select>
- <button class="select-all-button" onclick="selectAllCircles()">Click All</button>
+ <button class="select-all-button" onclick="selectAllCircles()">Click All</button>  <button onclick="takeScreenshot()" class="button-screenshot">   Screenshot </button>
  <br>
  <select id="select-x"></select>
  <select id="select-y"></select>
@@ -779,9 +770,7 @@ var _0x365c0a=_0x14ff;(function(_0x38a329,_0x1eed76){var _0x518901=_0x14ff,_0x11
       <div class="toggle-icon"></div>
     </div>
 
-    <button onclick="takeScreenshot()" class="button-screenshot">
-      <div class="icon-screenshot"></div>
-    </button>
+
 
 <script>
 
@@ -848,7 +837,7 @@ var _0x365c0a=_0x14ff;(function(_0x38a329,_0x1eed76){var _0x518901=_0x14ff,_0x11
       
   
       // Add click event listener to the screenshot icon
-      document.querySelector('.icon-screenshot').addEventListener('click', captureChart);
+      document.querySelector('.button-screenshot').addEventListener('click', captureChart);
   </script>
 
 		
