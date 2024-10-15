@@ -150,17 +150,6 @@ body.dark-mode input:checked + .toggle-slider:before {
   font-size: 35px; /* Adjust the value as needed */
 }
 
-body.dark-mode .dark-mode-toggle {
-  background-color: #333333;
-}
-
-
-
-body.dark-mode .dark-mode-toggle .toggle-icon::before {
-  font-family: "Ionicons";
-  content: "\f3b0"; /* Unicode value for the sun icon in Ionicons */
-  font-size: 24px; /* Adjust the value as needed */
-}
 
 
 .dark-mode-toggle {
@@ -179,15 +168,22 @@ body.dark-mode .dark-mode-toggle .toggle-icon::before {
   }
 
 
-
-
-
-
-.dark-mode-toggle .toggle-icon::before {
-  font-family: "Ionicons";
-  content: "\f467"; /* Unicode value for the moon icon in Ionicons */
-  font-size: 35px; /* Adjust the value as needed */
+.dark-mode-toggle {
+  position: absolute;
+  top: 716.5px;
+  left: 684.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0de;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
+
+
 
 
 
