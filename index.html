@@ -890,14 +890,7 @@ fetch(`locales/${language}.json`)
       }
     });
 
-    // Update placeholders for elements with data-i18n-placeholder attribute
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-      const key = element.getAttribute('data-i18n-placeholder');
-      const value = translations[key];
-      if (value) {
-        element.placeholder = value;
-      }
-    });
+
 
   });
 }
