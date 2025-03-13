@@ -258,13 +258,15 @@
             pointer-events: none;
         }
 
-        /* Hide button tooltips on mobile */
         @media (max-width: 768px) {
             .btn-tooltip .btn-tooltip-text {
                 display: none;
             }
             #search-bar {
             width: 148px;
+        }
+        .container {
+            margin: 30px auto;
         }
         }
 
@@ -927,7 +929,7 @@ body.dark-mode #SFctr td {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 0 auto 20px;
+    margin: 0px auto 20px;
     max-width: 700px;
     flex-wrap: wrap;
     padding: 0 15px;
@@ -4024,9 +4026,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', equalizeSeasonButtonWidths);
 });
 
-</script>
 
-    <script>
         // Check if device supports touch events (mobile device)
         document.addEventListener('DOMContentLoaded', function() {
             const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
