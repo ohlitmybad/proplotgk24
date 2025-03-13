@@ -56,7 +56,7 @@
 
         .container {
             max-width: 1200px;
-            margin: 5px auto;
+            margin: 3px auto;
             padding: 0 20px;
             box-sizing: border-box;
         }
@@ -169,11 +169,7 @@
             border-radius: 6px;
         }
 
-        #search-bar {
-            width: 148px;
-        }
-        
-        #select-league {
+        #search-bar, #select-league {
             width: 178px;
         }
 
@@ -264,6 +260,9 @@
         @media (max-width: 768px) {
             .btn-tooltip .btn-tooltip-text {
                 display: none;
+            }
+            #search-bar, #select-league {
+                width: 148px;
             }
         }
 
