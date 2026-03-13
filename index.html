@@ -55,13 +55,13 @@
                 <select id="select-y" style="display: none;"></select>
                 <select id="select-size" style="display: none;"></select>
                 <select id="select-league" style="display: none;" onchange="updateChart()">
-                     <option value="all"></option>
+                    <option value="all"></option>
                     <option value="Top 7 Leagues"></option>
                     <option value="Top 5 Leagues"></option>
                     <option value="Premier League"></option>
                     <option value="La Liga"></option>
                     <option value="Bundesliga"></option>
-                    <option value="Serie A"></option> 
+                    <option value="Serie A"></option>
                     <option value="Ligue 1"></option>
                     <option value="Eredivisie"></option>
                     <option value="Liga Portugal"></option>
@@ -73,17 +73,25 @@
                     <option value="Denmark Superliga"></option>
                     <option value="Sweden Allsvenskan"></option>
                     <option value="Norway Eliteserien"></option>
+                    <option value="Ukraine"></option>
+                    <option value="Russia"></option>
+                    <option value="Poland"></option>
                     <option value="Croatia HNL"></option>
                     <option value="Serbia SuperLiga"></option>
                     <option value="Czech Fortuna Liga"></option>
-                    <option value="Poland"></option>
-                    <option value="Ukraine"></option>
-                    <option value="Russia"></option>
+                    <option value="Bulgaria"></option>
+                    <option value="Hungary"></option>
+                    <option value="Slovakia"></option>
+                    <option value="Slovenia"></option>
+                    <option value="Romania"></option>
                     <option value="Greece"></option>
+                    <option value="Cyprus"></option>
                     <option value="Israel"></option>
+                    <option value="Saudi Pro League"></option>
+                    <option value="UAE"></option>
+                    <option value="Qatar"></option>
                     <option value="J1 League"></option>
                     <option value="K League 1"></option>
-                    <option value="Saudi Pro League"></option>
                     <option value="MLS"></option>
                     <option value="LigaMX"></option>
                     <option value="Brazil Serie A"></option>
@@ -92,33 +100,27 @@
                     <option value="Chile"></option>
                     <option value="Colombia"></option>
                     <option value="Ecuador"></option>
-                    <option value="Paraguay"></option>                    
-                    <option value="UAE"></option>
-                    <option value="Australia"></option>
-                    <option value="Slovenia"></option>
-                    <option value="Cyprus"></option>
-                    <option value="South Africa"></option>
-                    <option value="Qatar"></option>
+                    <option value="Paraguay"></option>
                     <option value="Egypt"></option>
                     <option value="Morocco"></option>
-                    <option value="Romania"></option>
-                    <option value="Bulgaria"></option>
-                    <option value="Hungary"></option>
-                    <option value="Slovakia"></option>
-                    <option value="Liga Portugal 2"></option>
-                    <option value="League One"></option>
-                    <option value="Eerste Divisie"></option>
+                    <option value="South Africa"></option>
+                    <option value="Australia"></option>
                     <option value="Championship"></option>
                     <option value="Segunda Division"></option>
                     <option value="Serie B"></option>
                     <option value="Bundesliga 2"></option>
-                    <option value="Ligue 2"></option>    
+                    <option value="Ligue 2"></option>
+                    <option value="Eerste Divisie"></option>
+                    <option value="Liga Portugal 2"></option>
+                    <option value="League One"></option>
                     <option value="Outside Top 7"></option>
                     <option value="South America"></option>
                     <option value="Scandinavia"></option>
                     <option value="Eastern Europe"></option>
-          
-                </select>
+                    <option value="Gulf"></option>
+                    <option value="Africa"></option>
+                    <option value="2nd Divisions"></option>
+</select>
                 <select id="select-age" style="display: none;">
                     <option value="all"></option>
                     <option value="17"></option>
@@ -180,10 +182,11 @@
                         <span data-i18n="leagues.all">All Leagues</span>
                     </div>  
                     <div class="custom-select-options" id="league-select-options">
+
                         <div class="custom-select-option selected" data-value="all">
                             <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.all">All Leagues</span>
-                        </div>  
+                        </div>
                         <div class="custom-select-option" data-value="Top 7 Leagues">
                             <iconify-icon icon="emojione:flag-for-flag-european-union" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.top7">Top 7 Leagues</span>
@@ -226,19 +229,17 @@
                         </div>
                         <div class="custom-select-option" data-value="Scotland Premiership">
                             <div style="width: 18px; height: 18px; border-radius: 50%; overflow: hidden; margin-right: 8px; background-color: #005EB8; background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg'); background-size: 150% 150%; background-position: center;"></div>
-                            <span data-i18n="leagues.scotland">Scotland</span>
-                        </div>
                         <div class="custom-select-option" data-value="Austrian Bundesliga">
                             <iconify-icon icon="emojione:flag-for-austria" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.austria">Austria</span>
-                        </div>  
+                        </div>
                         <div class="custom-select-option" data-value="Swiss Super League">
                             <iconify-icon icon="emojione:flag-for-switzerland" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.switzerland">Switzerland</span>
                         </div>
                         <div class="custom-select-option" data-value="Süper Lig">
                             <iconify-icon icon="emojione:flag-for-turkey" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.turkey">Turkiye</span>
+                            <span data-i18n="leagues.turkey">Türkiye</span>
                         </div>
                         <div class="custom-select-option" data-value="Denmark Superliga">
                             <iconify-icon icon="emojione:flag-for-denmark" width="18" height="18"></iconify-icon>
@@ -252,6 +253,18 @@
                             <iconify-icon icon="emojione:flag-for-norway" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.norway">Norway</span>
                         </div>
+                        <div class="custom-select-option" data-value="Ukraine">
+                            <iconify-icon icon="emojione:flag-for-ukraine" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.ukraine">Ukraine</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Russia">
+                            <iconify-icon icon="emojione:flag-for-russia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.russia">Russia</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Poland">
+                            <iconify-icon icon="emojione:flag-for-poland" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.poland">Poland</span>
+                        </div>
                         <div class="custom-select-option" data-value="Croatia HNL">
                             <iconify-icon icon="emojione:flag-for-croatia" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.croatia">Croatia</span>
@@ -264,25 +277,49 @@
                             <iconify-icon icon="emojione:flag-for-czechia" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.czechrepublic">Czech Republic</span>
                         </div>
-                        <div class="custom-select-option" data-value="Poland">
-                            <iconify-icon icon="emojione:flag-for-poland" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.poland">Poland</span>
+                        <div class="custom-select-option" data-value="Bulgaria">
+                            <iconify-icon icon="emojione:flag-for-bulgaria" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.bulgaria">Bulgaria</span>
                         </div>
-                        <div class="custom-select-option" data-value="Ukraine">
-                            <iconify-icon icon="emojione:flag-for-ukraine" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.ukraine">Ukraine</span>
+                        <div class="custom-select-option" data-value="Hungary">
+                            <iconify-icon icon="emojione:flag-for-hungary" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.hungary">Hungary</span>
                         </div>
-                        <div class="custom-select-option" data-value="Russia">
-                            <iconify-icon icon="emojione:flag-for-russia" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.russia">Russia</span>
+                        <div class="custom-select-option" data-value="Slovakia">
+                            <iconify-icon icon="emojione:flag-for-slovakia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.slovakia">Slovakia</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Slovenia">
+                            <iconify-icon icon="emojione:flag-for-slovenia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.slovenia">Slovenia</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Romania">
+                            <iconify-icon icon="emojione:flag-for-romania" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.romania">Romania</span>
                         </div>
                         <div class="custom-select-option" data-value="Greece">
                             <iconify-icon icon="emojione:flag-for-greece" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.greece">Greece</span>
                         </div>
+                        <div class="custom-select-option" data-value="Cyprus">
+                            <iconify-icon icon="emojione:flag-for-cyprus" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.cyprus">Cyprus</span>
+                        </div>
                         <div class="custom-select-option" data-value="Israel">
                             <iconify-icon icon="emojione:flag-for-israel" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.israel">Israel</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Saudi Pro League">
+                            <iconify-icon icon="emojione:flag-for-saudi-arabia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.saudiarabia">Saudi Arabia</span>
+                        </div>
+                        <div class="custom-select-option" data-value="UAE">
+                            <iconify-icon icon="emojione:flag-for-united-arab-emirates" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.uae">UAE</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Qatar">
+                            <iconify-icon icon="emojione:flag-for-qatar" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.qatar">Qatar</span>
                         </div>
                         <div class="custom-select-option" data-value="J1 League">
                             <iconify-icon icon="emojione:flag-for-japan" width="18" height="18"></iconify-icon>
@@ -291,10 +328,6 @@
                         <div class="custom-select-option" data-value="K League 1">
                             <iconify-icon icon="emojione:flag-for-south-korea" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.korea">Korea</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Saudi Pro League">
-                            <iconify-icon icon="emojione:flag-for-saudi-arabia" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.saudiarabia">Saudi Arabia</span>
                         </div>
                         <div class="custom-select-option" data-value="MLS">
                             <iconify-icon icon="emojione:flag-for-united-states" width="18" height="18"></iconify-icon>
@@ -332,30 +365,6 @@
                             <iconify-icon icon="emojione:flag-for-paraguay" width="18" height="18"></iconify-icon>  
                             <span data-i18n="leagues.paraguay">Paraguay</span>   
                         </div>
-                        <div class="custom-select-option" data-value="UAE">
-                            <iconify-icon icon="emojione:flag-for-united-arab-emirates" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.uae">UAE</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Australia">
-                            <iconify-icon icon="emojione:flag-for-australia" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.australia">Australia</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Slovenia">
-                            <iconify-icon icon="emojione:flag-for-slovenia" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.slovenia">Slovenia</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Cyprus">
-                            <iconify-icon icon="emojione:flag-for-cyprus" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.cyprus">Cyprus</span>
-                        </div>
-                        <div class="custom-select-option" data-value="South Africa">
-                            <iconify-icon icon="emojione:flag-for-south-africa" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.southafrica">South Africa</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Qatar">
-                            <iconify-icon icon="emojione:flag-for-qatar" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.qatar">Qatar</span>
-                        </div>
                         <div class="custom-select-option" data-value="Egypt">
                             <iconify-icon icon="emojione:flag-for-egypt" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.egypt">Egypt</span>
@@ -364,38 +373,18 @@
                             <iconify-icon icon="emojione:flag-for-morocco" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.morocco">Morocco</span>
                         </div>
-                        <div class="custom-select-option" data-value="Romania">
-                            <iconify-icon icon="emojione:flag-for-romania" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.romania">Romania</span>
+                        <div class="custom-select-option" data-value="South Africa">
+                            <iconify-icon icon="emojione:flag-for-south-africa" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.southafrica">South Africa</span>
                         </div>
-                        <div class="custom-select-option" data-value="Bulgaria">
-                            <iconify-icon icon="emojione:flag-for-bulgaria" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.bulgaria">Bulgaria</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Hungary">
-                            <iconify-icon icon="emojione:flag-for-hungary" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.hungary">Hungary</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Slovakia">
-                            <iconify-icon icon="emojione:flag-for-slovakia" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.slovakia">Slovakia</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Liga Portugal 2">
-                            <iconify-icon icon="emojione:flag-for-portugal" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.ligaportugal2">Liga Portugal 2</span>
-                        </div>
-                        <div class="custom-select-option" data-value="League One">
-                            <iconify-icon icon="emojione:flag-for-united-kingdom" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.leagueone">League One</span>
-                        </div>
-                        <div class="custom-select-option" data-value="Eerste Divisie">
-                            <iconify-icon icon="emojione:flag-for-netherlands" width="18" height="18"></iconify-icon>
-                            <span data-i18n="leagues.eerstedivisie">Eerste Divisie</span>
+                        <div class="custom-select-option" data-value="Australia">
+                            <iconify-icon icon="emojione:flag-for-australia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.australia">Australia</span>
                         </div>
                         <div class="custom-select-option" data-value="Championship">
                             <iconify-icon icon="emojione:flag-for-united-kingdom" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.championship">Championship</span>
-                        </div>  
+                        </div>
                         <div class="custom-select-option" data-value="Segunda Division">
                             <iconify-icon icon="emojione:flag-for-spain" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.spain">Spain Segunda</span>
@@ -412,6 +401,18 @@
                             <iconify-icon icon="emojione:flag-for-france" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.ligue2">Ligue 2</span>
                         </div>
+                        <div class="custom-select-option" data-value="Eerste Divisie">
+                            <iconify-icon icon="emojione:flag-for-netherlands" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.eerstedivisie">Eerste Divisie</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Liga Portugal 2">
+                            <iconify-icon icon="emojione:flag-for-portugal" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.ligaportugal2">Liga Portugal 2</span>
+                        </div>
+                        <div class="custom-select-option" data-value="League One">
+                            <iconify-icon icon="emojione:flag-for-united-kingdom" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.leagueone">League One</span>
+                        </div>
                         <div class="custom-select-option" data-value="Outside Top 7">
                             <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
                            <span data-i18n="leagues.outsidetop7">Outside Top 7</span>
@@ -427,8 +428,20 @@
                         <div class="custom-select-option" data-value="Eastern Europe">
                             <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
                             <span data-i18n="leagues.easterneurope">Eastern Europe</span>
-                        </div>  
-                    </div>
+                        </div>
+                        <div class="custom-select-option" data-value="Gulf">
+                            <iconify-icon icon="emojione:globe-showing-asia-australia" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.gulf">Gulf</span>
+                        </div>
+                        <div class="custom-select-option" data-value="Africa">
+                            <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.africa">Africa</span>
+                        </div>
+                        <div class="custom-select-option" data-value="2nd Divisions">
+                            <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
+                            <span data-i18n="leagues.2nddivisions">2nd Divisions</span>
+                        </div>
+</div>
                 </div>
                               <!-- Custom age selector -->
                 <div class="custom-select-container">
