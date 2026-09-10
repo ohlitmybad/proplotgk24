@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="plot.css">
+</head>
+<body>
+    <script type="text/javascript">document.body.style.visibility="hidden";</script><div id="SFctr" data-org="31002" data-mfl="64c215764c0b6076026762a3"><div style="clear:both"></div></div><script type="text/javascript" src="https://cdn.membershipworks.com/mfl.js"></script>
+    <div class="container">
+        <div class="chart-wrapper">
+            <div class="controls">
+                <div class="custom-select-container medium-select position-selector">
+                    <div class="custom-select-trigger" id="position-select-trigger">
+                        <span data-i18n="positions.centreback">Centre-back</span>
+                    </div>
+                    <div class="custom-select-options multi-select" id="position-select-options"></div>
+                </div>
+
+                <div class="custom-select-container medium-select league-selector">
+                    <div class="custom-select-trigger has-icon" id="league-select-trigger">
+                        <iconify-icon icon="emojione:globe-showing-europe-africa" width="18" height="18"></iconify-icon>
+                        <span data-i18n="leagues.allLeagues">All Leagues</span>
+                    </div>
+                    <div class="custom-select-options multi-select" id="league-select-options"></div>
+                </div>
+
+                <div class="custom-select-container age-selector">
+                    <div class="custom-select-trigger" id="age-select-trigger">
+                        <span data-i18n="age.all">Age</span>
+                    </div>
+                    <div class="custom-select-options" id="age-select-options"></div>
+                </div>
+
+                <div class="custom-select-container medium-select metric-selector">
+                    <div class="custom-select-trigger" id="x-metric-trigger">
+                        <span data-i18n="metrics.minutesPlayed">Minutes played</span>
+                    </div>
+                    <div class="custom-select-options" id="x-metric-options">
+                        <div class="dropdown-search-wrap">
+                            <input type="search" id="xMetricSearch" placeholder="Search metrics" data-i18n="search.metrics" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div id="x-metric-list"></div>
+                    </div>
+                </div>
+
+                <div class="custom-select-container medium-select metric-selector">
+                    <div class="custom-select-trigger" id="y-metric-trigger">
+                        <span data-i18n="metrics.minutesPlayed">Minutes played</span>
+                    </div>
+                    <div class="custom-select-options" id="y-metric-options">
+                        <div class="dropdown-search-wrap">
+                            <input type="search" id="yMetricSearch" placeholder="Search metrics" data-i18n="search.metrics" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div id="y-metric-list"></div>
+                    </div>
+                </div>
+
+                <div class="custom-select-container medium-select size-selector">
+                    <div class="custom-select-trigger has-icon" id="size-metric-trigger">
+                        <iconify-icon icon="mdi:chart-bubble" width="16" height="16"></iconify-icon>
+                        <span data-i18n="metrics.minutesPlayed">Minutes played</span>
+                    </div>
+                    <div class="custom-select-options" id="size-metric-options">
+                        <div class="dropdown-search-wrap">
+                            <input type="search" id="sizeMetricSearch" placeholder="Search metrics" data-i18n="search.metrics" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div id="size-metric-list"></div>
+                    </div>
+                </div>
+
+                <input type="search" id="search-bar" placeholder="Search player or team" data-i18n="search.placeholder" autocomplete="off" spellcheck="false">
+
+                <div class="btn-tooltip template-menu">
+                    <button type="button" id="template-select-trigger" class="btn btn-outline btn-icon menu-trigger">
+                        <i class="ion-ios-browsers-outline"></i>
+                    </button>
+                    <div class="custom-select-options" id="template-select-options"></div>
+                    <span class="btn-tooltip-text" id="template-tooltip" data-i18n="templates.presets">Presets</span>
+                </div>
+                <div class="btn-tooltip">
+                    <button type="button" id="toggleMetrics" class="btn btn-outline btn-icon">
+                        <i class="ion-ios-stopwatch-outline"></i>
+                    </button>
+                    <span class="btn-tooltip-text" data-i18n="toggles.switchToTotal">Switch to total</span>
+                </div>
+                <div class="btn-tooltip">
+                    <button type="button" class="btn btn-outline btn-icon" id="select-all-button">
+                        <i class="ion-ios-circle-filled" id="select-icon"></i>
+                    </button>
+                    <span class="btn-tooltip-text" id="select-all-tooltip" data-i18n="tooltip.select-all">Select all players</span>
+                </div>
+                <div class="btn-tooltip">
+                    <button type="button" id="toggle-median-lines" class="btn btn-outline btn-icon">
+                        <i class="ion-stats-bars"></i>
+                    </button>
+                    <span class="btn-tooltip-text" id="median-lines-tooltip" data-i18n="tooltip.median-lines">Show median lines</span>
+                </div>
+                <div class="btn-tooltip">
+                    <button type="button" id="pastSeasonBtn" class="btn btn-outline btn-icon">
+                        <i class="ion-calendar"></i>
+                    </button>
+                    <span class="btn-tooltip-text" data-i18n="toggles.switchToPastSeason">Switch to past season</span>
+                </div>
+                <div class="btn-tooltip">
+                    <button type="button" class="btn btn-outline btn-icon" id="screenshot-button">
+                        <i class="ion-camera"></i>
+                    </button>
+                    <span class="btn-tooltip-text" data-i18n="tooltip.screenshot">Download chart as image</span>
+                </div>
+
+                <div class="threshold-min-field is-empty" id="thresholdMinField">
+                    <span class="threshold-label" data-i18n="filters.min">Minimum</span>
+                    <span class="threshold-gt" aria-hidden="true">&gt;</span>
+                    <input type="number" id="thresholdMin" min="0" step="any" inputmode="decimal" placeholder="">
+                </div>
+
+                <div class="custom-select-container medium-select threshold-metric-selector">
+                    <div class="custom-select-trigger" id="threshold-metric-trigger">
+                        <span data-i18n="metrics.minutesPlayed">Minutes played</span>
+                    </div>
+                    <div class="custom-select-options" id="threshold-metric-options">
+                        <div class="dropdown-search-wrap">
+                            <input type="search" id="thresholdMetricSearch" placeholder="Search metrics" data-i18n="search.metrics" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div id="threshold-metric-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <div id="plotLoading" class="plot-loading" hidden></div>
+                <svg id="scatter-plot"></svg>
+            </div>
+            <div class="legend" id="league-legend"></div>
+        </div>
+    </div>
+
+    <div class="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span class="toggle-icon"></span>
+    </div>
+
+    <script src="plot.js"></script>
+    <script src="plothelpers.js"></script>
+</body>
+</html>
