@@ -515,6 +515,7 @@ input:focus, select:focus {
 
 .template-menu .custom-select-options {
   left: 0;
+  max-width: calc(100vw - 16px);
   min-width: 220px;
   right: auto;
 }
@@ -729,7 +730,7 @@ circle.search-match {
 
 @media (max-width: 768px) {
   .container {
-    margin: 30px auto;
+    margin: 9px auto;
     padding: 0 12px;
   }
 
